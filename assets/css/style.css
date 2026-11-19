@@ -96,7 +96,7 @@ img {
 /* ── Buttons ── */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 16px 28px;
   font-family: 'Space Mono', 'Courier New', monospace;
   font-size: 13px;
   font-weight: 700;
@@ -132,7 +132,7 @@ img {
 }
 
 .btn-sm {
-  padding: 8px 16px;
+  padding: 12px 20px;
   font-size: 11px;
 }
 
@@ -212,7 +212,7 @@ img {
   color: var(--text-nav);
   font-weight: 700;
   position: relative;
-  padding-left: 0;
+  padding: 5px 4px 5px 0;
   transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
@@ -222,11 +222,10 @@ img {
   position: absolute;
   left: -18px;
   top: 50%;
-  translate: 0 -50%;
   font-size: 9px;
   color: var(--accent);
   opacity: 0;
-  transform: translateX(-6px);
+  transform: translate(-6px, -50%);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -239,7 +238,7 @@ img {
 .nav-links a:hover::before,
 .nav-links a.active::before {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(0, -50%);
 }
 
 /* =========================================
@@ -857,10 +856,23 @@ img {
   margin-bottom: 14px;
 }
 
-.hobby-icon img {
+.hobby-icon-image {
   width: 64px;
   height: 64px;
   object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.hobby-icon-dark {
+  display: none;
+}
+
+body.dark .hobby-icon-light {
+  display: none;
+}
+
+body.dark .hobby-icon-dark {
+  display: block;
 }
 
 .hobby-title {
@@ -993,6 +1005,11 @@ img {
   font-weight: 700;
   word-break: break-all;
   transition: opacity 0.2s ease;
+}
+
+a.contact-link {
+  display: inline-block;
+  padding: 6px 4px;
 }
 
 .contact-link:hover {
@@ -1191,6 +1208,201 @@ body::before {
   z-index: 10000;
 }
 
+.pixel-particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.pixel-particles span {
+  position: absolute;
+  width: var(--particle-size, 5px);
+  height: var(--particle-size, 5px);
+  background-color: var(--accent);
+  opacity: 0;
+  animation: pixel-float 9s steps(5, end) infinite;
+}
+
+.pixel-particles span:nth-child(1)  { left: 7%;  top: 16%; --pixel-drift-x: 14px; --pixel-drift-y: -12px; }
+.pixel-particles span:nth-child(2)  { left: 23%; top: 72%; --pixel-drift-x: -12px; --pixel-drift-y: -18px; }
+.pixel-particles span:nth-child(3)  { left: 40%; top: 36%; --pixel-drift-x: 20px; --pixel-drift-y: -14px; }
+.pixel-particles span:nth-child(4)  { left: 61%; top: 20%; --pixel-drift-x: -16px; --pixel-drift-y: -24px; }
+.pixel-particles span:nth-child(5)  { left: 78%; top: 66%; --pixel-drift-x: 11px; --pixel-drift-y: -16px; }
+.pixel-particles span:nth-child(6)  { left: 91%; top: 30%; --pixel-drift-x: -18px; --pixel-drift-y: -20px; }
+.pixel-particles span:nth-child(7)  { left: 15%; top: 52%; --pixel-drift-x: 17px; --pixel-drift-y: -22px; }
+.pixel-particles span:nth-child(8)  { left: 51%; top: 82%; --pixel-drift-x: -14px; --pixel-drift-y: -12px; }
+.pixel-particles span:nth-child(9)  { left: 73%; top: 43%; --pixel-drift-x: 20px; --pixel-drift-y: -26px; }
+.pixel-particles span:nth-child(10) { left: 34%; top: 9%;  --pixel-drift-x: -12px; --pixel-drift-y: -18px; }
+
+body.dark .pixel-particles span {
+  width: 3px;
+  height: 3px;
+  background-color: #fff1a8;
+  box-shadow: 0 0 7px 2px rgba(240, 165, 0, 0.65);
+  animation-name: firefly-float;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pixel-float {
+  0%, 100% { opacity: 0; transform: translate3d(0, 8px, 0) scale(0.5); }
+  18% { opacity: 0.68; transform: translate3d(var(--pixel-drift-x), var(--pixel-drift-y), 0) scale(1.1); }
+  48% { opacity: 0.5; transform: translate3d(var(--pixel-drift-x), calc(var(--pixel-drift-y) - 7px), 0) scale(0.9); }
+  72% { opacity: 0.62; transform: translate3d(var(--pixel-drift-x), var(--pixel-drift-y), 0) scale(1); }
+}
+
+@keyframes firefly-float {
+  0%, 100% { opacity: 0; transform: translate3d(0, 0, 0) scale(0.45); }
+  14% { opacity: 0.9; transform: translate3d(var(--firefly-x1), var(--firefly-y1), 0) scale(1.1); }
+  31% { opacity: 0.24; transform: translate3d(var(--firefly-x2), var(--firefly-y2), 0) scale(0.7); }
+  49% { opacity: 0.85; transform: translate3d(var(--firefly-x3), var(--firefly-y3), 0) scale(1.15); }
+  68% { opacity: 0.28; transform: translate3d(var(--firefly-x4), var(--firefly-y4), 0) scale(0.75); }
+  86% { opacity: 0.78; transform: translate3d(var(--firefly-x5), var(--firefly-y5), 0) scale(1); }
+}
+
+.pixel-custom-cursor {
+  display: none;
+}
+
+.pickaxe-particle-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10002;
+}
+
+.pickaxe-particle-layer > span {
+  position: absolute;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  background-color: var(--particle-color);
+  box-shadow: 1px 1px 0 rgba(23, 23, 23, 0.65);
+  animation: pixel-block-break 460ms steps(5, end) forwards;
+}
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  body.has-pixel-custom-cursor,
+  body.has-pixel-custom-cursor * {
+    cursor: none !important;
+  }
+
+  .pixel-custom-cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 10001;
+  }
+
+  .pixel-custom-cursor.is-pickaxe {
+    width: 52px;
+    height: 52px;
+    transform: translate(-51px, -26px);
+  }
+
+  .pixel-custom-cursor.is-pointer {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pixel-custom-cursor.is-pointer.is-arrow {
+    transform: translate(-5px, -2px);
+  }
+
+  .pixel-custom-cursor.is-pointer.is-hand {
+    width: 48px;
+    height: 48px;
+    transform: translate(-14px, -2px);
+  }
+
+  .pixel-custom-cursor.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .pixel-custom-cursor img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+  }
+
+  .pixel-custom-cursor .cursor-hand {
+    display: none;
+  }
+
+  .pixel-custom-cursor.is-pointer.is-hand .cursor-image {
+    display: none;
+  }
+
+  .pixel-custom-cursor.is-pointer.is-hand .cursor-hand {
+    display: block;
+  }
+
+  .pixel-custom-cursor.is-pickaxe img {
+    transform-origin: 3px 50px;
+  }
+
+  .pixel-custom-cursor.is-pickaxe.is-swinging img {
+    animation: pixel-pickaxe-swing 380ms steps(6, end);
+  }
+}
+
+@keyframes pixel-pickaxe-swing {
+  0%   { transform: rotate(0deg); }
+  42%  { transform: rotate(72deg); }
+  70%  { transform: rotate(-12deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pixel-block-break {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  48% {
+    transform: translate(var(--particle-mid-x), var(--particle-mid-y)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--particle-x), var(--particle-y)) rotate(var(--particle-rotation)) scale(0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pixel-particles span {
+    animation: none;
+    opacity: 0;
+  }
+
+  .pixel-custom-cursor.is-pickaxe.is-swinging img {
+    animation: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .nav-links a,
+  .back-btn,
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+}
+
 /* ── Typewriter blinking cursor ── */
 .cursor {
   display: inline-block;
@@ -1256,6 +1468,18 @@ body::before {
 .reveal:nth-child(11) { transition-delay: 0.70s; }
 .reveal:nth-child(12) { transition-delay: 0.77s; }
 
+.skill-card.reveal-complete,
+.hobby-card.reveal-complete,
+.project-card.reveal-complete,
+.contact-card.reveal-complete,
+.gallery-item.reveal-complete {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color var(--theme-speed) ease,
+              border-color var(--theme-speed) ease;
+  transition-delay: 0s;
+}
+
 /* ── UNIVERSAL CARD HOVER ──
    Every card type: lifts up-left, shadow expands
    down-right. Like selecting a tile in a game menu.
@@ -1280,13 +1504,17 @@ body::before {
   transform: scale(1.05);
 }
 
+.gallery-item .photo-box {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* ── Gallery viewfinder vignette on hover ── */
 .gallery-item::after {
   content: "";
   position: absolute;
   inset: 0;
   box-shadow: inset 0 0 0px 0px rgba(0,0,0,0);
-  transition: box-shadow 0.35s ease;
+  transition: box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
   border-radius: 4px;
 }
@@ -1325,7 +1553,7 @@ body::before {
 /* ── Hobby icon animations — each maps to its hobby ── */
 
 /* 1. Camera — shutter flash */
-.hobby-card:nth-child(1):hover .hobby-icon img {
+.hobby-card:nth-child(1):hover .hobby-icon-image {
   animation: shutter 0.3s ease;
 }
 @keyframes shutter {
@@ -1336,7 +1564,7 @@ body::before {
 }
 
 /* 2. Gaming — controller rumble */
-.hobby-card:nth-child(2):hover .hobby-icon img {
+.hobby-card:nth-child(2):hover .hobby-icon-image {
   animation: rumble 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 @keyframes rumble {
@@ -1350,7 +1578,7 @@ body::before {
 }
 
 /* 3. Drawing — pencil wiggle */
-.hobby-card:nth-child(3):hover .hobby-icon img {
+.hobby-card:nth-child(3):hover .hobby-icon-image {
   animation: pencil-wiggle 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   transform-origin: bottom center;
 }
@@ -1364,7 +1592,7 @@ body::before {
 }
 
 /* 4. Gardening — plant sway */
-.hobby-card:nth-child(4):hover .hobby-icon img {
+.hobby-card:nth-child(4):hover .hobby-icon-image {
   animation: plant-sway 0.65s ease-in-out;
   transform-origin: bottom center;
 }
@@ -1377,7 +1605,7 @@ body::before {
 }
 
 /* 5. Web coding — power-up flash */
-.hobby-card:nth-child(5):hover .hobby-icon img {
+.hobby-card:nth-child(5):hover .hobby-icon-image {
   animation: powerup 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 @keyframes powerup {
@@ -1388,7 +1616,7 @@ body::before {
 }
 
 /* 6. Crafts — tilt pick-up */
-.hobby-card:nth-child(6):hover .hobby-icon img {
+.hobby-card:nth-child(6):hover .hobby-icon-image {
   animation: craft-tilt 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   transform-origin: bottom left;
 }
@@ -1422,8 +1650,8 @@ body::before {
   bottom: 28px;
   right: 28px;
   z-index: 9998;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border: 3px solid var(--border);
   box-shadow: 4px 4px 0px var(--shadow);
   background-color: var(--surface);
@@ -1448,6 +1676,69 @@ body::before {
 .theme-toggle:active {
   transform: translate(4px, 4px);
   box-shadow: 0px 0px 0px var(--shadow);
+}
+
+.cursor-toggle {
+  display: none;
+  position: fixed;
+  right: 28px;
+  bottom: 98px;
+  z-index: 9998;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0px var(--shadow);
+  background-color: var(--surface);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color var(--theme-speed) ease,
+              border-color var(--theme-speed) ease;
+}
+
+.cursor-toggle:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--shadow);
+}
+
+.cursor-toggle:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--shadow);
+}
+
+.cursor-toggle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.cursor-toggle .cursor-icon-pointer {
+  width: 28px;
+  height: 28px;
+}
+
+.cursor-toggle .cursor-icon-pickaxe {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+
+.cursor-toggle.is-pointer .cursor-icon-pointer {
+  display: none;
+}
+
+.cursor-toggle.is-pointer .cursor-icon-pickaxe {
+  display: block;
+}
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  .cursor-toggle {
+    display: flex;
+  }
 }
 
 .theme-toggle .icon-moon,

@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Keith Justine S. Maunahan</title>
+  <title>My Portfolio | Keith Justine S. Maunahan</title>
+  <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/pixelarticons/save.svg?color=%23ffffff" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,20 +13,25 @@
 </head>
 
 <body>
-<script>
-  // Apply theme before first paint — prevents flash
-  if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
-</script>
+<script src="assets/js/theme.js"></script>
 
   <!-- Retro Scanlines Overlay -->
   <div class="scanlines" aria-hidden="true"></div>
+  <div class="pixel-particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
   <!-- Back to Top Button removed -->
 
   <!-- Dark Mode Toggle -->
   <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-    <img src="assets/images/icons/moon_icon.png" alt="Dark mode" class="icon-moon" />
-    <img src="assets/images/icons/sun_icon.png" alt="Light mode" class="icon-sun" />
+    <img src="https://api.iconify.design/pixelarticons/moon.svg?color=%23c05638" alt="" aria-hidden="true" class="icon-moon" />
+    <img src="https://api.iconify.design/pixelarticons/sun.svg?color=%23f0a500" alt="" aria-hidden="true" class="icon-sun" />
+  </button>
+  <button class="cursor-toggle" id="cursorToggle" type="button" title="Switch to pixel pointer cursor" aria-label="Switch to pixel pointer cursor" aria-pressed="false">
+    <img src="assets/images/optimized/default_cursor.png" alt="" aria-hidden="true" class="cursor-icon-pointer" />
+    <img src="assets/images/pickaxe.png" alt="" aria-hidden="true" class="cursor-icon-pickaxe" />
   </button>
 
   <nav class="navbar">
@@ -72,7 +78,7 @@
         </div>
         <div class="hero-stat-divider">|</div>
         <div class="hero-stat">
-          <span class="hero-stat-num" data-target="6">0</span>
+          <span class="hero-stat-num" data-target="12">0</span>
           <span class="hero-stat-label">Skills Learned</span>
         </div>
       </div>
@@ -89,16 +95,16 @@
       <div class="avatar-scene">
         <div class="avatar-card" id="avatarCard">
           <div class="avatar-face avatar-front">
-            <img src="assets/images/my_photo1.png" alt="Avatar Front" class="avatar-img" id="avatarFront" />
+            <img src="assets/images/optimized/avatar-light.jpg" alt="Avatar Front" class="avatar-img" id="avatarFront" fetchpriority="high" decoding="async" />
             <div class="avatar-click-hint">[ CLICK ]</div>
           </div>
           <div class="avatar-face avatar-back">
-            <img src="https://i.pinimg.com/originals/bf/1f/9d/bf1f9d35aba6d574a74aaf7fae9798d7.gif" alt="Avatar Back" class="avatar-img" id="avatarBack" />
+            <img src="https://i.pinimg.com/originals/bf/1f/9d/bf1f9d35aba6d574a74aaf7fae9798d7.gif" alt="Avatar Back" class="avatar-img" id="avatarBack" loading="lazy" decoding="async" />
             <div class="avatar-click-hint">[ CLICK ]</div>
           </div>
         </div>
       </div>
-      <div class="avatar-label">[ PLAYER1: SAMPOVIII ]</div>
+      <div class="avatar-label">[ PLAYER 1: SAMPOVIII ]</div>
     </div>
 
   </section>
@@ -241,7 +247,7 @@
       </div>
 
       <div class="skill-card reveal">
-        <img src="assets/images/icons/photoshop_icon.jpg" alt="Photoshop" class="skill-icon" />
+        <img src="assets/images/icons/photoshop_icon.png" alt="Photoshop" class="skill-icon" />
         <div class="skill-info">
           <h3 class="skill-name">Photoshop</h3>
           <p class="skill-desc">Basic Photo Editing</p>
@@ -316,7 +322,7 @@
           <span class="terminal-title">poolside_villa/index.html</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/poolside_villa.png" alt="Poolside Villa Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/poolside-villa.jpg" alt="Poolside Villa Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Web-Based Resort Reservation and Management System for Poolside Villa</h3>
         <p class="project-desc">
@@ -347,7 +353,7 @@
           <span class="terminal-title">stms/index.php</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/stms.png" alt="Simple Task Management System Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/stms.jpg" alt="Simple Task Management System Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Simple Task Management System</h3>
         <p class="project-desc">
@@ -378,7 +384,7 @@
           <span class="terminal-title">group_portfolio/index.html</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/group_portfolio.png" alt="Group Portfolio Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/group-portfolio.jpg" alt="Group Portfolio Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Group Portfolio</h3>
         <p class="project-desc">
@@ -412,7 +418,7 @@
           <span class="terminal-title">agape_cafe_prototype.fig</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/agape_cafe.png" alt="Agape Cafe Prototype Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/agape-cafe.jpg" alt="Agape Cafe Prototype Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Agape Cafe Ordering System</h3>
         <p class="project-desc">
@@ -438,7 +444,7 @@
           <span class="terminal-title">resort_reservation_prototype.fig</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/resort_reservation.png" alt="Resort Reservation Prototype Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/resort-reservation.jpg" alt="Resort Reservation Prototype Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Web-Based Resort Reservation System</h3>
         <p class="project-desc">
@@ -464,7 +470,7 @@
           <span class="terminal-title">smart_junk_scalable.fig</span>
         </div>
         <div class="project-img">
-          <img src="assets/images/Screenshot 2026-11-18 204557.png" alt="Smart Junk ScaliABLE Prototype Screenshot" class="project-screenshot" />
+          <img src="assets/images/optimized/smart-junk.jpg" alt="Smart Junk ScaliABLE Prototype Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
         </div>
         <h3 class="project-title">Smart Junk ScaliABLE</h3>
         <p class="project-desc">
@@ -496,7 +502,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/camera.png" alt="Mobile Photography" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/camera.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/camera.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Mobile Photography & Vlogging</h3>
         <p class="hobby-desc">
@@ -506,7 +513,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/gaming.png" alt="Gaming" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/gamepad.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/gamepad.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Gaming</h3>
         <p class="hobby-desc">
@@ -516,7 +524,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/drawing.png" alt="Drawing" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/pencil.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/pencil.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Drawing</h3>
         <p class="hobby-desc">
@@ -526,7 +535,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/gardening.png" alt="Gardening" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/leaf.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/leaf.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Gardening</h3>
         <p class="hobby-desc">
@@ -536,7 +546,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/web_projects.png" alt="Web Coding" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/code.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/code.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Simple Web Coding</h3>
         <p class="hobby-desc">
@@ -546,7 +557,8 @@
 
       <div class="hobby-card reveal">
         <div class="hobby-icon">
-          <img src="assets/images/icons/crafts.png" alt="Crafts" />
+          <img class="hobby-icon-image hobby-icon-light" src="https://api.iconify.design/pixelarticons/brush.svg?color=%23c05638" alt="" aria-hidden="true" />
+          <img class="hobby-icon-image hobby-icon-dark" src="https://api.iconify.design/pixelarticons/brush.svg?color=%23f0a500" alt="" aria-hidden="true" />
         </div>
         <h3 class="hobby-title">Crafts</h3>
         <p class="hobby-desc">
@@ -567,32 +579,32 @@
     <div class="gallery-grid">
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231026_111419_089.jpg" alt="Photo 1" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231026_111419_089.jpg" alt="Photo 1" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Mountain, Terminal, and Clouds</p></div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231109_130447_533.jpg" alt="Photo 2" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231109_130447_533.jpg" alt="Photo 2" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Full Insect Display</p></div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231109_130508_630.jpg" alt="Photo 3" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231109_130508_630.jpg" alt="Photo 3" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Close-up Insect Display</p></div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231109_173409_094.jpg" alt="Photo 4" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231109_173409_094.jpg" alt="Photo 4" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Dino Exhibit</p></div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231228_083316_686.jpg" alt="Photo 5" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231228_083316_686.jpg" alt="Photo 5" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Mini Clam</p></div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="assets/images/IMG_20231228_165248_809.jpg" alt="Photo 6" class="photo-box" />
+        <img src="assets/images/optimized/IMG_20231228_165248_809.jpg" alt="Photo 6" class="photo-box" loading="lazy" decoding="async" />
         <div class="caption"><p>Dusk, Shore, Boat</p></div>
       </div>
 
@@ -617,7 +629,7 @@
         <div class="contact-card reveal">
           <img src="assets/images/icons/gmail.png" alt="Email" class="contact-icon" />
           <h3 class="contact-name">Email</h3>
-          <p class="contact-link">maunahankeithjustine8@gmail.com</p>
+          <a href="mailto:maunahankeithjustine8@gmail.com" class="contact-link">maunahankeithjustine8@gmail.com</a>
         </div>
 
         <div class="contact-card reveal">
@@ -656,207 +668,8 @@
     </div>
   </footer>
 
-  <!-- Typewriter + Scroll Reveal + Active Nav + Skill Bars + Counter + Avatar Flip -->
-  <script>
-    // ── 1. Typewriter Effect ──────────────────────────────────────────────
-    const words = ["Web Developer", "Photographer", "UI/UX Designer"];
-    let i = 0;
-    let timer;
-
-    function typingEffect() {
-      let word = words[i].split("");
-      var loopTyping = function() {
-        if (word.length > 0) {
-          document.getElementById('typewriter').innerHTML += word.shift();
-        } else {
-          deletingEffect();
-          return false;
-        }
-        timer = setTimeout(loopTyping, 120);
-      };
-      loopTyping();
-    }
-
-    function deletingEffect() {
-      let word = words[i].split("");
-      var loopDeleting = function() {
-        if (word.length > 0) {
-          word.pop();
-          document.getElementById('typewriter').innerHTML = word.join("");
-        } else {
-          i = words.length > (i + 1) ? i + 1 : 0;
-          typingEffect();
-          return false;
-        }
-        timer = setTimeout(loopDeleting, 60);
-      };
-      setTimeout(loopDeleting, 2000);
-    }
-
-    typingEffect();
-
-    // ── 2. Scroll Reveal (Intersection Observer) ─────────────────────────
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          const bars = entry.target.querySelectorAll('.skill-bar-fill');
-          bars.forEach(bar => {
-            const target = bar.style.width;
-            bar.style.width = '0%';
-            setTimeout(() => { bar.style.width = target; }, 100);
-          });
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealEls.forEach(el => revealObserver.observe(el));
-
-    // ── 3. Active Nav Link on Scroll ─────────────────────────────────────
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(sec => navObserver.observe(sec));
-
-    // ── 4. Stat Counter Animation ─────────────────────────────────────────
-    function animateCounter(el, target, duration) {
-      let start = 0;
-      const step = target / (duration / 16);
-      const tick = () => {
-        start += step;
-        if (start >= target) { el.textContent = target + '+'; return; }
-        el.textContent = Math.floor(start);
-        requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    }
-
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.hero-stat-num').forEach(el => {
-            animateCounter(el, parseInt(el.dataset.target), 800);
-          });
-          statsObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) statsObserver.observe(heroStats);
-
-    // ── 5. Click-to-flip Avatar Card ─────────────────────────────────────
-    // 10 fast spins → 5 slow spins → lands on correct face
-    const avatarCard = document.getElementById('avatarCard');
-    let   isBack     = false;   // tracks which face is currently showing
-    let   isSpinning = false;   // blocks clicks while animating
-
-    avatarCard.addEventListener('click', () => {
-      if (isSpinning) return;   // ignore clicks mid-spin
-      isSpinning = true;
-
-      // Remove whichever class might still be on from last time
-      avatarCard.classList.remove('flip-to-back', 'flip-to-front');
-
-      // Force a reflow so the browser registers the class removal
-      void avatarCard.offsetWidth;
-
-      if (!isBack) {
-        avatarCard.classList.add('flip-to-back');
-      } else {
-        avatarCard.classList.add('flip-to-front');
-      }
-
-      setTimeout(() => {
-        isBack = !isBack;
-        isSpinning = false;
-      }, 1000);
-    });
-    // ── 6. Dark Mode Toggle — ripple wipe transition ─────────────────────
-    const themeToggle = document.getElementById('themeToggle');
-
-    // ── Avatar image sets per theme ──
-    // Light mode images
-    const AVATAR_LIGHT = {
-      front: 'assets/images/my_photo1.png',
-      back:  'https://i.pinimg.com/originals/bf/1f/9d/bf1f9d35aba6d574a74aaf7fae9798d7.gif'
-    };
-    // Dark mode images — replace these filenames with your actual dark photos
-    const AVATAR_DARK = {
-      front: 'assets/images/my_photo2.png',   // ← swap with your dark front image
-      back:  'https://upload-os-bbs.hoyolab.com/upload/2026/08/14/112138931/ed7bb8a8d9e31fdb633781e4a7904fab_2956014821842979295.gif'    // ← swap with your dark back image
-    };
-
-    function applyAvatarTheme(isDark) {
-      const set = isDark ? AVATAR_DARK : AVATAR_LIGHT;
-      document.getElementById('avatarFront').src = set.front;
-      document.getElementById('avatarBack').src  = set.back;
-    }
-
-    // Apply saved preference immediately (no animation on load)
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      applyAvatarTheme(true);
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const btn = themeToggle;
-      const rect = btn.getBoundingClientRect();
-
-      const originX = rect.left + rect.width  / 2;
-      const originY = rect.top  + rect.height / 2;
-      const maxDist = Math.hypot(
-        Math.max(originX, window.innerWidth  - originX),
-        Math.max(originY, window.innerHeight - originY)
-      ) * 2;
-
-      const ripple = document.createElement('div');
-      ripple.style.cssText = `
-        position: fixed;
-        left: ${originX}px;
-        top:  ${originY}px;
-        width:  0px;
-        height: 0px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        z-index: 99998;
-        background: ${document.body.classList.contains('dark') ? '#eaf4ec' : '#13101f'};
-      `;
-      document.body.appendChild(ripple);
-
-      ripple.animate([
-        { width: '0px',          height: '0px',          opacity: 1 },
-        { width: maxDist + 'px', height: maxDist + 'px', opacity: 1 }
-      ], { duration: 500, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'forwards' })
-        .onfinish = () => {
-          // Switch theme
-          document.body.classList.toggle('dark');
-          const nowDark = document.body.classList.contains('dark');
-          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
-
-          // Swap avatar images to match new theme
-          applyAvatarTheme(nowDark);
-
-          ripple.animate([
-            { opacity: 1 },
-            { opacity: 0 }
-          ], { duration: 300, easing: 'ease', fill: 'forwards' })
-            .onfinish = () => ripple.remove();
-        };
-    });
-  </script>
+  <script src="assets/js/index.js" defer></script>
+  <script src="assets/js/pickaxe-cursor.js" defer></script>
 
 </body>
 </html>
