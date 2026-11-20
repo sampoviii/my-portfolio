@@ -1,4 +1,6 @@
 const words = ['Web Developer', 'Game Developer', 'Photographer', 'UI/UX Designer'];
+const prefersReducedMotion = typeof window.matchMedia === 'function'
+  && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let wordIndex = 0;
 
 function typeNextWord() {
@@ -28,7 +30,12 @@ function typeNextWord() {
   typeLetter();
 }
 
-typeNextWord();
+if (prefersReducedMotion) {
+  const typewriter = document.getElementById('typewriter');
+  if (typewriter) typewriter.textContent = words[0];
+} else {
+  typeNextWord();
+}
 
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
@@ -96,6 +103,11 @@ if ('IntersectionObserver' in window) {
 }
 
 function animateCounter(element, target, duration) {
+  if (prefersReducedMotion) {
+    element.textContent = `${target}+`;
+    return;
+  }
+
   let value = 0;
   const increment = target / (duration / 16);
   const tick = () => {
@@ -143,6 +155,6 @@ if (avatarCard) {
     setTimeout(() => {
       isBack = !isBack;
       isSpinning = false;
-    }, 1000);
+    }, prefersReducedMotion ? 0 : 1000);
   });
 }

@@ -2,12 +2,12 @@
   const body = document.body;
   const avatarImages = {
     light: {
-      front: 'assets/images/optimized/avatar-light.jpg',
-      back: 'https://i.pinimg.com/originals/bf/1f/9d/bf1f9d35aba6d574a74aaf7fae9798d7.gif'
+      front: 'assets/images/my_photo1.png',
+      back: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGpnaGlwNDkyYTR4Z2lqb2x1MjI3bGVlMTV2bWJxZ2Y1N2J2eDgwMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tvywhzr7zyOUne7HjA/giphy.gif'
     },
     dark: {
-      front: 'assets/images/optimized/avatar-dark.jpg',
-      back: 'https://upload-os-bbs.hoyolab.com/upload/2026/08/14/112138931/ed7bb8a8d9e31fdb633781e4a7904fab_2956014821842979295.gif'
+      front: 'assets/images/my_photo2.png',
+      back: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2F3ZDN4cGI2dWd0b2s3c2RkdzdkMXF5bWs1NmY1aXlwZGhjczl0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Srr4SbJIGrQQ9dF6mY/giphy.gif'
     }
   };
 
