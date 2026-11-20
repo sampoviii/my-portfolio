@@ -442,8 +442,16 @@ img {
   letter-spacing: 1px;
 }
 
-.avatar-scene:hover .avatar-click-hint {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .avatar-scene:hover .avatar-click-hint {
+    opacity: 1;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .avatar-scene:active .avatar-click-hint {
+    opacity: 1;
+  }
 }
 
 /* =========================================
