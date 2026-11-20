@@ -449,8 +449,8 @@ img {
 }
 
 @media (hover: none), (pointer: coarse) {
-  .avatar-scene:active .avatar-click-hint {
-    opacity: 1;
+  .avatar-click-hint {
+    display: none;
   }
 }
 
